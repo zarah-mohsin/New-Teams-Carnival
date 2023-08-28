@@ -16,10 +16,10 @@ export default function MeetingStage({ user }) {
     sendMessage,
     isLoaded,
   } = useUnityContext({
-    loaderUrl: "build/build.loader.js",
-    dataUrl: "build/build.data",
-    frameworkUrl: "build/build.framework.js",
-    codeUrl: "build/build.wasm",
+    loaderUrl: "build/SnakesAndLadders/build.loader.js",
+    dataUrl: "build/SnakesAndLadders/build.data",
+    frameworkUrl: "build/SnakesAndLadders/build.framework.js",
+    codeUrl: "build/SnakesAndLadders/build.wasm",
   });
 
   //////////////LETS ROLL BUTTON TRIGGER///////////////////////

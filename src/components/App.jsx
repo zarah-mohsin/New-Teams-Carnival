@@ -44,6 +44,16 @@ export default function App() {
         app.notifySuccess();
       });
   }, [loading]);
+
+  useEffect(() => {
+    setTabDisplay(JSON.parse(localStorage.getItem("tabDisplay")));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tabDisplay", JSON.stringify(tabDisplay));
+  }, [tabDisplay]);
+
+  console.log(tabDisplay);
   return (
     <TeamsFxContext.Provider
       value={{ theme, themeString, teamsUserCredential }}

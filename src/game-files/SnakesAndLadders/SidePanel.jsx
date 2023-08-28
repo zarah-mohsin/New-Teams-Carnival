@@ -29,15 +29,15 @@ export const SidePanel = ({ user }) => {
   };
 
   const shareToStage = () => {
-    if (inTeams()) {
-      meeting.shareAppContentToStage((error, result) => {
-        if (!error) {
-          console.log("Started sharing to stage");
-        } else {
-          console.warn("shareAppContentToStage failed", error);
-        }
-      }, window.location.origin + "?inTeams=1&view=stage");
-    }
+    // if (inTeams()) {
+    meeting.shareAppContentToStage((error, result) => {
+      if (!error) {
+        console.log("Started sharing to stage");
+      } else {
+        console.warn("shareAppContentToStage failed", error);
+      }
+    }, window.location.origin + "?inTeams=1&view=stage");
+    // }
   };
 
   /////////////////////////////////////FLUID///////////////////////////////////////////
