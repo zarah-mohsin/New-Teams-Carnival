@@ -1,11 +1,13 @@
 import React from "react";
 import TabDisplayContext from "./TabDisplayContext";
+import SnakesGame from "../game-files/SnakesAndLadders/SnakesGame";
 
 export default function Games() {
-  const { tabDisplay, setTabDisplay } = React.useContext(TabDisplayContext);
+  const { tabDisplay } = React.useContext(TabDisplayContext);
   return (
     <div>
-      {/* {tabDisplay === "Snakes and Ladders" && <Game />} */}
+      This is the Games page.
+      {tabDisplay === "Snakes and Ladders" && <SnakesGame />}
       {/* {tabDisplay === "Might & Malice" && <TurnBasedCombat />} */}
     </div>
   );

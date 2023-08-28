@@ -22,12 +22,15 @@ import { TeamsFxContext } from "./Context";
 import config from "./sample/lib/config";
 import Games from "./Games";
 import Tab from "./Tab";
+import TabDisplayContext from "./TabDisplayContext";
 
 /**
  * The main app which handles the initialization and routing
  * of the app.
  */
 export default function App() {
+  const [tabDisplay, setTabDisplay] = useState("");
+
   const { loading, theme, themeString, teamsUserCredential } =
     useTeamsUserCredential({
       initiateLoginEndpoint: config.initiateLoginEndpoint,
@@ -57,18 +60,20 @@ export default function App() {
         }
         style={{ background: tokens.colorNeutralBackground3 }}
       >
-        <Router>
-          {!loading && (
-            <Routes>
-              <Route path="/game" element={<Games />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/termsofuse" element={<TermsOfUse />} />
-              <Route path="/tab" element={<Tab />} />
-              <Route path="/config" element={<TabConfig />} />
-              <Route path="*" element={<Navigate to={"/game"} />}></Route>
-            </Routes>
-          )}
-        </Router>
+        <TabDisplayContext.Provider value={{ tabDisplay, setTabDisplay }}>
+          <Router>
+            {!loading && (
+              <Routes>
+                <Route path="/game" element={<Games />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/termsofuse" element={<TermsOfUse />} />
+                <Route path="/tab" element={<Tab />} />
+                <Route path="/config" element={<TabConfig />} />
+                <Route path="*" element={<Navigate to={"/game"} />}></Route>
+              </Routes>
+            )}
+          </Router>
+        </TabDisplayContext.Provider>
       </FluentProvider>
     </TeamsFxContext.Provider>
   );
