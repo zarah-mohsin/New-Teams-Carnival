@@ -1,6 +1,7 @@
 import React from "react";
 import TabDisplayContext from "./TabDisplayContext";
 import { useNavigate } from "react-router-dom";
+import { DefaultButton, PrimaryButton, Stack } from "@fluentui/react";
 
 export default function GameCard({ games, showGame }) {
   const { tabDisplay, setTabDisplay } = React.useContext(TabDisplayContext);
@@ -23,14 +24,15 @@ export default function GameCard({ games, showGame }) {
           )}
         </div>
         <br />
+        <Stack horizontal tokens={{ childrenGap: "40" }}>
+          <DefaultButton text="Back" onClick={showGame} />
+          <PrimaryButton
+            text="Play"
+            className="main-menu-button"
+            onClick={() => (setTabDisplay(games.Title), navigate("/game"))}
+          />
+        </Stack>
       </div>
-      <button onClick={showGame}>back</button>
-      <button
-        className="playButton"
-        onClick={() => (setTabDisplay(games.Title), navigate("/game"))}
-      >
-        Play
-      </button>
     </div>
   );
 }
