@@ -23,6 +23,7 @@ import config from "./sample/lib/config";
 import Games from "./Games";
 import Tab from "./Tab";
 import TabDisplayContext from "./TabDisplayContext";
+import { MainMenu } from "./MainMenu";
 
 /**
  * The main app which handles the initialization and routing
@@ -67,7 +68,7 @@ export default function App() {
                 <Route path="/game" element={<Games />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/termsofuse" element={<TermsOfUse />} />
-                <Route path="/tab" element={<Tab />} />
+                <Route path="/tab" element={<MainMenu />} />
                 <Route path="/config" element={<TabConfig />} />
                 <Route path="*" element={<Navigate to={"/game"} />}></Route>
               </Routes>

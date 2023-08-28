@@ -1,9 +1,7 @@
 import { useContext } from "react";
 import { MainMenu } from "./MainMenu";
 import { TeamsFxContext } from "./Context";
-import config from "./sample/lib/config";
-
-const showFunction = Boolean(config.apiName);
+import "./MainMenu.css";
 
 export default function Tab() {
   const { themeString } = useContext(TeamsFxContext);

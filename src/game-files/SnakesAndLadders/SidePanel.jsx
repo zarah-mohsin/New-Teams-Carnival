@@ -1,4 +1,4 @@
-import { inTeams } from "../utils/inTeams.js";
+import { inTeams } from "../../utils/inTeams";
 import { meeting, app } from "@microsoft/teams-js";
 import { useState, useEffect } from "react";
 import FluidService from "./fluidLiveShare";
