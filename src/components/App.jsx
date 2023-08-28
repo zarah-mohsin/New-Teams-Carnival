@@ -7,25 +7,32 @@ import {
   tokens,
 } from "@fluentui/react-components";
 import { useEffect } from "react";
-import { HashRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 import { app } from "@microsoft/teams-js";
 import { useTeamsUserCredential } from "@microsoft/teamsfx-react";
 import Privacy from "./Privacy";
 import TermsOfUse from "./TermsOfUse";
-import Tab from "./Tab";
 import TabConfig from "./TabConfig";
 import { TeamsFxContext } from "./Context";
 import config from "./sample/lib/config";
+import Games from "./Games";
+import Tab from "./Tab";
 
 /**
  * The main app which handles the initialization and routing
  * of the app.
  */
 export default function App() {
-  const { loading, theme, themeString, teamsUserCredential } = useTeamsUserCredential({
-    initiateLoginEndpoint: config.initiateLoginEndpoint,
-    clientId: config.clientId,
-  });
+  const { loading, theme, themeString, teamsUserCredential } =
+    useTeamsUserCredential({
+      initiateLoginEndpoint: config.initiateLoginEndpoint,
+      clientId: config.clientId,
+    });
   useEffect(() => {
     loading &&
       app.initialize().then(() => {
@@ -34,7 +41,9 @@ export default function App() {
       });
   }, [loading]);
   return (
-    <TeamsFxContext.Provider value={{ theme, themeString, teamsUserCredential }}>
+    <TeamsFxContext.Provider
+      value={{ theme, themeString, teamsUserCredential }}
+    >
       <FluentProvider
         theme={
           themeString === "dark"
@@ -51,11 +60,12 @@ export default function App() {
         <Router>
           {!loading && (
             <Routes>
+              <Route path="/game" element={<Games />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/termsofuse" element={<TermsOfUse />} />
               <Route path="/tab" element={<Tab />} />
               <Route path="/config" element={<TabConfig />} />
-              <Route path="*" element={<Navigate to={"/tab"} />}></Route>
+              <Route path="*" element={<Navigate to={"/game"} />}></Route>
             </Routes>
           )}
         </Router>

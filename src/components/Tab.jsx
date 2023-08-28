@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Welcome } from "./sample/Welcome";
+import { MainMenu } from "./MainMenu";
 import { TeamsFxContext } from "./Context";
 import config from "./sample/lib/config";
 
@@ -9,9 +9,15 @@ export default function Tab() {
   const { themeString } = useContext(TeamsFxContext);
   return (
     <div
-      className={themeString === "default" ? "light" : themeString === "dark" ? "dark" : "contrast"}
+      className={
+        themeString === "default"
+          ? "light"
+          : themeString === "dark"
+          ? "dark"
+          : "contrast"
+      }
     >
-      <Welcome showFunction={showFunction} />
+      <MainMenu />
     </div>
   );
 }

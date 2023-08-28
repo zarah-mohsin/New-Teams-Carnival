@@ -11,8 +11,8 @@
     "termsOfUseUrl": "${{TAB_ENDPOINT}}/index.html#/termsofuse"
   },
   "icons": {
-    "color": "color.png",
-    "outline": "outline.png"
+    "color": "tent-icon.png",
+    "outline": "tent-outline.png"
   },
   "name": {
     "short": "Carnival",

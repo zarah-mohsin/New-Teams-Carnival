@@ -1,0 +1,126 @@
+.info h1 {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+}
+
+.info p {
+    background-color: #F5F5F5;
+}
+
+.sidePanelTitle h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: medium;
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.263));
+    border: 1px solid white;
+    border-style:double;
+    border-radius: 5px;
+    background-color: rgb(34, 13, 78);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sidePanelTitle p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: x-small;
+}
+
+.sidePanelTitle button {
+    display: flex;
+    font-size: small;
+    font-family: 'Press Start 2P', cursive !important;
+    padding: 9px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    width: 85%;
+    text-align: center !important;
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(255, 255, 255, 0.263));
+    transition: background-color 0.2s ease;
+    transition: transform 0.2s ease;
+    background-color: rgb(204, 204, 204);
+    animation: fadeIn 1.5s forwards !important;
+}
+
+.sidePanelTitle button:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgb(95, 95, 95);
+    transform: scale(1.2);
+    color: white;
+    cursor: pointer;
+}
+
+.sidePanelTitle img {
+    display: flex;
+    width: 270px;
+    height: 160px;
+    border-radius: 10px;
+    filter: drop-shadow(0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.263));
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    animation: fadeIn 0.5s forwards;
+}
+
+.unity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 65%;
+    height: 100%vh;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0.8rem 0.8rem 0.5rem rgba(0, 0, 0, 0.583));
+    background-color: aliceblue;
+}
+
+.unity-container:hover {
+    cursor: pointer;
+}
+
+.unity-container canvas {
+    width: 80%;
+    height: auto;
+}
+
+.unity-container canvas:hover {
+    cursor: pointer;
+}
+
+.tile {
+    display: flex;
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: x-small;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 4px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(13, 69, 99);
+    color: white;
+    animation: fadeIn 1s forwards;
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
