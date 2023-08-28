@@ -10,7 +10,7 @@ import {
 } from "@fluentui/react";
 import { initializeIcons } from "@fluentui/font-icons-mdl2";
 import GameCard from "./GameCard.jsx";
-import games from "../models/Games.js";
+import games from "../model/Games.js";
 import GameIcon from "./GameIcon.jsx";
 import "./MainMenu.css";
 

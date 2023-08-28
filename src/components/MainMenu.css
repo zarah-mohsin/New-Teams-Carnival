@@ -132,7 +132,7 @@
   font-size: 14px; */
 
 .bg {
-  background-image: url("../images/CarnivalPixel.png");
+  background-image: url("images/CarnivalPixel.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -169,7 +169,7 @@
 .logo {
   width: 90%;
   height: 75px;
-  background-image: url("../images/Logo.png");
+  background-image: url("images/Logo.png");
   background-size: 100%;
   background-repeat: no-repeat;
   margin: auto;
