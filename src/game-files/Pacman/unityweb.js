@@ -2,10 +2,10 @@ import React from "react";
 import { useUnityContext } from "react-unity-webgl";
 
 const unityConfig = {
-  loaderUrl: "build/build.loader.js",
-  dataUrl: "build/build.data",
-  frameworkUrl: "build/build.framework.js",
-  codeUrl: "build/build.wasm",
+  loaderUrl: "build/Pacman/build.loader.js",
+  dataUrl: "build/Pacman/build.data",
+  frameworkUrl: "build/Pacman/build.framework.js",
+  codeUrl: "build/Pacman/build.wasm",
 };
 
 const UnityContext = React.createContext();
@@ -22,7 +22,7 @@ export function useUnity() {
     addEventListener,
     removeEventListener,
   } = useUnityContext(unityConfig);
-  
+
   // Return all the necessary methods and properties
   return {
     unityContext,
@@ -37,8 +37,4 @@ export function useUnity() {
   };
 }
 
-
 export default UnityContext;
-
-
-

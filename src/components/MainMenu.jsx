@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState, useContext } from "react";
-import { app, meeting } from "@microsoft/teams-js";
-import { UserMeetingRole } from "@microsoft/live-share";
+import { useState } from "react";
 import {
   DefaultButton,
   Dialog,
@@ -8,7 +6,6 @@ import {
   PrimaryButton,
   TextField,
 } from "@fluentui/react";
-import { initializeIcons } from "@fluentui/font-icons-mdl2";
 import GameCard from "./GameCard.jsx";
 import games from "../model/Games.js";
 import GameIcon from "./GameIcon.jsx";

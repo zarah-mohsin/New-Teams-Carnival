@@ -44,6 +44,13 @@ const games = [
     MinPlayers: 2,
     Icon: require("../game-files/MightAndMalice/icon.png"),
   },
+  {
+    Title: "Pacman",
+    Description: "Eat the dots and avoid the ghosts!",
+    MaxPlayers: "None",
+    MinPlayers: 1,
+    Icon: require("../game-files/Pacman/icon.png"),
+  },
 ];
 
 export default games;
