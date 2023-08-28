@@ -20,7 +20,7 @@ class TabConfig extends React.Component {
         const baseUrl = `https://${window.location.hostname}:${window.location.port}`;
         pages.config
           .setConfig({
-            suggestedDisplayName: "My Tab",
+            suggestedDisplayName: "Carnival",
             entityId: "Test",
             contentUrl: baseUrl + "/index.html#/tab",
             websiteUrl: baseUrl + "/index.html#/tab",
@@ -43,8 +43,7 @@ class TabConfig extends React.Component {
       <div>
         <h1>Tab Configuration</h1>
         <div>
-          This is where you will add your tab configuration options the user can choose when the tab
-          is added to your team/group chat.
+          No tab configuration options for this app! Click save to continue.
         </div>
       </div>
     );
