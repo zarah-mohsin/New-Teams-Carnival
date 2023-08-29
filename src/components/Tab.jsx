@@ -5,14 +5,11 @@ import "./MainMenu.css";
 
 export default function Tab() {
   const [ready, setReady] = useState(false);
-  const [frameContext, setFrameContext] = useState("");
 
   useEffect(() => {
     async function getContext() {
       try {
         const context = await app.getContext();
-        setFrameContext(context.page.frameContext);
-
         if (
           context.page.frameContext == FrameContexts.sidePanel ||
           context.page.frameContext == FrameContexts.meetingStage
@@ -20,10 +17,9 @@ export default function Tab() {
           setReady(true);
         }
       } catch (error) {
-        // Handle error if any
+        console.error(error);
       }
     }
-
     getContext();
   }, []);
 
@@ -36,8 +32,9 @@ export default function Tab() {
             <div className="logo"></div>
             <hr className="line"></hr>
             <br />
-            <p>This app only works in Teams meetings!</p>
-            <p>Click join to let the fun begin!</p>
+            <h2>This app only works in Teams meetings!</h2>
+            <br />
+            <h2>Click join to let the fun begin!</h2>
           </div>
         </div>
       </div>

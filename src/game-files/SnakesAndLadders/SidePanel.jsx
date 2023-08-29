@@ -1,8 +1,8 @@
-import { inTeams } from "../../utils/inTeams";
 import { meeting, app } from "@microsoft/teams-js";
 import { useState, useEffect } from "react";
-import FluidService from "./fluidLiveShare";
+import FluidService from "./fluidLiveShare.js";
 import "./snakes.css";
+import titleCard from "./logo.png";
 
 export const SidePanel = ({ user }) => {
   const [activeUsers, setActiveUsers] = useState([]);
@@ -29,7 +29,6 @@ export const SidePanel = ({ user }) => {
   };
 
   const shareToStage = () => {
-    // if (inTeams()) {
     meeting.shareAppContentToStage((error, result) => {
       if (!error) {
         console.log("Started sharing to stage");
@@ -37,7 +36,6 @@ export const SidePanel = ({ user }) => {
         console.warn("shareAppContentToStage failed", error);
       }
     }, window.location.origin + "?inTeams=1&view=stage");
-    // }
   };
 
   /////////////////////////////////////FLUID///////////////////////////////////////////
@@ -101,6 +99,7 @@ export const SidePanel = ({ user }) => {
 
   return (
     <div className="sidePanel">
+      <img src={titleCard} style={{ width: "100%" }} alt="Snakes and Ladders" />
       {fluidWorks === null && <p>Loading...</p>}
       {fluidWorks === false && (
         <p>
