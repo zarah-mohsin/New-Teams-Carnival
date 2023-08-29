@@ -8,6 +8,28 @@ const games = [
     Icon: require("../game-files/SnakesAndLadders/icon.png"),
   },
   {
+    Title: "Trivia Race",
+    Description:
+      "Compete against other participants in a fast-paced quiz challenge to test your knowledge and climb the rankings.",
+    MaxPlayers: "None",
+    MinPlayers: 1,
+    Icon: require("../game-files/TriviaRace/icon.png"),
+  },
+  {
+    Title: "Pacman",
+    Description: "Eat the dots and avoid the ghosts!",
+    MaxPlayers: "None",
+    MinPlayers: 1,
+    Icon: require("../game-files/Pacman/icon.png"),
+  },
+  {
+    Title: "Might and Malice",
+    Description: "Fight for glory in this turn-based combat game!",
+    MaxPlayers: "None",
+    MinPlayers: 2,
+    Icon: require("../game-files/MightAndMalice/icon.png"),
+  },
+  {
     Title: "Teams-Rex",
     Description: "T-rex game for teams",
     MaxPlayers: "None",
@@ -28,28 +50,6 @@ const games = [
     MaxPlayers: "None",
     MinPlayers: 1,
     Icon: require("../game-files/BalloonBomb/icon.png"),
-  },
-  {
-    Title: "Trivia Race",
-    Description:
-      "Compete against other participants in a fast-paced quiz challenge to test your knowledge and climb the rankings.",
-    MaxPlayers: "None",
-    MinPlayers: 1,
-    Icon: require("../game-files/TriviaRace/icon.png"),
-  },
-  {
-    Title: "Might & Malice",
-    Description: "Fight for glory in this turn-based combat game!",
-    MaxPlayers: "None",
-    MinPlayers: 2,
-    Icon: require("../game-files/MightAndMalice/icon.png"),
-  },
-  {
-    Title: "Pacman",
-    Description: "Eat the dots and avoid the ghosts!",
-    MaxPlayers: "None",
-    MinPlayers: 1,
-    Icon: require("../game-files/Pacman/icon.png"),
   },
 ];
 

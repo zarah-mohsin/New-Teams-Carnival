@@ -74,7 +74,7 @@
     overflow: hidden;
     width: 65%;
     height: 100%vh;
-    margin-top: 8%;
+    margin-top: 1.5%;
     margin-left: auto;
     margin-right: auto;
     filter: drop-shadow(0.8rem 0.8rem 0.5rem rgba(0, 0, 0, 0.583));
@@ -86,12 +86,45 @@
 }
 
 .unity-container canvas {
-    width: 80%;
+    width: 65%;
     height: auto;
 }
 
 .unity-container canvas:hover {
     cursor: pointer;
+}
+
+.join button {
+    font-family: 'Press Start 2P', cursive !important;
+    display: flex;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 10px;
+    margin-top: 5.5%;
+    transition: background-color 0.2s ease;
+    transition: transform 0.2s ease;
+}
+
+.join button:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgb(95, 95, 95);
+    transform: scale(1.2);
+    color: white;
+    cursor: pointer;
+    
+}
+
+.fade-button {
+    transition: opacity 0.5s ease-in-out !important;
+    opacity: 1 !important;
+}
+
+.fade-button.hidden {
+    opacity: 0 !important;
+}
+
+.fade-button[disabled] {
+    cursor: not-allowed;
 }
 
 .tile {
