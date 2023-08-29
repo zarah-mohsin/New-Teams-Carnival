@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { app, meeting } from "@microsoft/teams-js";
 import FluidService from "./fluidLiveShare.js";
-import { inTeams } from "../../utils/inTeams";
+import titleCard from "./title.png";
 
 export const SidePanel = () => {
   const speedOptions = ["Tortoise", "Falcon", "Cheetah"];
@@ -62,7 +62,7 @@ export const SidePanel = () => {
                 setIsTimerRunning(false);
                 setTimerValue(0);
               };
-            }, 3000);
+            }, 5000);
           }
 
           setScoreboard(array);
@@ -86,6 +86,7 @@ export const SidePanel = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    textAlign: "center",
   };
 
   const scoreStyle = {
@@ -135,7 +136,6 @@ export const SidePanel = () => {
   };
 
   const shareToStage = () => {
-    // if (inTeams()) {
     meeting.shareAppContentToStage((error, result) => {
       if (!error) {
         console.log("Started sharing to stage");
@@ -143,7 +143,6 @@ export const SidePanel = () => {
         console.warn("shareAppContentToStage failed", error);
       }
     }, window.location.origin + "?inTeams=1&view=stage");
-    // }
   };
 
   const startGame = (index) => {
@@ -154,6 +153,7 @@ export const SidePanel = () => {
 
   return (
     <div style={panelStyle}>
+      <img src={titleCard} style={{ width: "100%" }} alt="Trivia Race" />
       {fluidWorks === null && <p>Loading...</p>}
       {fluidWorks === false && (
         <p>
