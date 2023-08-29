@@ -24,6 +24,8 @@ import Games from "./Games";
 import Tab from "./Tab";
 import TabDisplayContext from "./TabDisplayContext";
 import { MainMenu } from "./MainMenu";
+import TurnBasedCombat from "../game-files/MightAndMalice/TurnBasedCombat";
+import SnakesGame from "../game-files/SnakesAndLadders/SnakesGame";
 
 /**
  * The main app which handles the initialization and routing
@@ -75,6 +77,8 @@ export default function App() {
           <Router>
             {!loading && (
               <Routes>
+                <Route path="/might-and-malice" element={<TurnBasedCombat />} />
+                <Route path="/snakes-and-ladders" element={<SnakesGame />} />
                 <Route path="/game" element={<Games />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/termsofuse" element={<TermsOfUse />} />
