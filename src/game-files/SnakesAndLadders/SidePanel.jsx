@@ -1,6 +1,6 @@
 import { meeting, app } from "@microsoft/teams-js";
 import { useState, useEffect } from "react";
-import FluidService from "./fluidLiveShare.js";
+import FluidService from "./snakesFluidLiveShare.js";
 import "./snakes.css";
 import titleCard from "./logo.png";
 
