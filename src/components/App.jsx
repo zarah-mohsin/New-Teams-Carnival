@@ -77,8 +77,6 @@ export default function App() {
           <Router>
             {!loading && (
               <Routes>
-                <Route path="/might-and-malice" element={<TurnBasedCombat />} />
-                <Route path="/snakes-and-ladders" element={<SnakesGame />} />
                 <Route path="/game" element={<Games />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/termsofuse" element={<TermsOfUse />} />

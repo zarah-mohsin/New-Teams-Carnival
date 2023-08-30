@@ -1,0 +1,352 @@
+/* ----- GENERAL STYLES ----- */
+h1 {
+  padding-bottom: 1em;
+}
+
+h3 {
+  margin-left: 1em;
+}
+
+/* ----- The main container ----- */
+.outside {
+  padding-top: 50pt;
+}
+
+.rex-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 3px solid grey;
+  border-radius: 5px;
+  padding: 2em;
+}
+
+/* ----- The game container ----- */
+.game-container,
+.control-container {
+  width: 100%;
+}
+
+.game-container {
+  flex: 2;
+  border: 3px solid grey;
+  border-radius: 5px;
+}
+
+.game-window {
+  position: relative;
+  width: 100%;
+  /* border: 1px solid #ccc; */
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+}
+
+.unity {
+  height: 100%;
+  width: 100%;
+}
+
+/* ----- The side container ----- */
+.control-container {
+  flex: 1;
+  max-width: 220px;
+  padding-left: 20px;
+  height: 360px;
+  display: flex;
+  flex-direction: column; /* stack the child elements vertically */
+  justify-content: space-between; /* push first child to the top and last child to the bottom */
+}
+
+/* Player */
+.player-container {
+  border-radius: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* Player text */
+.player-text {
+  color: #454db8;
+  font-family: "Pixel";
+  font-size: 10px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Player number */
+
+/* .player-number-container {
+} */
+
+.players-number {
+  font-family: "Pixel";
+  font-size: 16px;
+  text-align: center;
+  color: #454db8;
+}
+
+/* Button */
+.btn-container {
+  text-align: center;
+  padding-top: 20px;
+}
+.start-btn {
+  font-family: "Pixel", sans-serif;
+  font-size: 10px;
+  background-color: grey;
+  color: white;
+  height: 50px;
+  width: 180px;
+  cursor: not-allowed;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+.start-btn.active {
+  background-color: #5059c9;
+  cursor: pointer;
+}
+/* .start-btn.active:active {
+  background-color: darkblue;
+} */
+.start-btn:disabled {
+  background-color: grey; /* Color for the disabled state */
+  cursor: not-allowed;
+}
+
+/* .start-btn:hover {
+  background-color: #5059c9;
+} */
+
+/* .info-container {
+} */
+
+/* .chance-container {
+} */
+
+.chance-text {
+  color: #454db8;
+  font-family: "Pixel";
+  font-size: 10px;
+  text-align: center;
+}
+
+.img-container img {
+  max-width: 50%;
+  height: auto;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container img {
+  margin-right: 5px;
+}
+
+.img-text {
+  font-family: "Pixel";
+  font-size: 18px;
+  text-align: center;
+  color: #454db8;
+  margin-right: 5px;
+}
+
+/* .score-container {
+} */
+
+.score-text-1 {
+  padding-top: 20px;
+  color: #454db8;
+  font-family: "Pixel";
+  font-size: 10px;
+  text-align: center;
+}
+
+.score-text-2 {
+  font-family: "Pixel";
+  font-size: 16px;
+  text-align: center;
+  color: #454db8;
+}
+
+/* .clickedNo-container {
+} */
+
+.no-text-1 {
+  padding-top: 20px;
+  color: #454db8;
+  font-family: "Pixel";
+  font-size: 10px;
+  text-align: center;
+}
+
+.no-text-2 {
+  font-family: "Pixel";
+  font-size: 16px;
+  text-align: center;
+  color: #454db8;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+@media screen and (min-width: 1042px) {
+  .control-container {
+    height: 400px;
+  }
+}
+
+/* Default styles for larger screens */
+@media screen and (min-width: 1041px) and (min-width: 1024px) {
+  .control-container {
+    height: 395px;
+  }
+}
+
+/* Adjusted height for medium screens */
+@media screen and (max-width: 1023px) and (min-width: 681px) {
+  .control-container {
+    height: 45vh;
+  }
+}
+
+/* Adjusted height for smaller screens */
+@media screen and (max-width: 680px) {
+  .container {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .game-container,
+  .control-container {
+    width: 100%; /* Take up full width on small screens */
+  }
+
+  .control-container {
+    height: 50vh; /* 50% of the viewport height */
+  }
+}
+
+/* Adjust for very small screens */
+@media screen and (max-width: 220px) {
+  .control-container {
+    width: 100%;
+    height: 70vh; /* 70% of the viewport height to give even more space */
+  }
+}
+
+/* Game screen */
+
+/* 
+
+.imagedialog {
+  width: 100%;
+  height: 100%;
+}
+
+.patientcontainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  max-width: 600px;
+  width: 600px;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
+
+  .patientcardcontainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0.5em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #ccc;
+
+    :last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .patientcard {
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    height: 45px;
+    line-height: 22px;
+    border-left: 4px solid green;
+    border-radius: 2px;
+    margin-bottom: 10px;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &.New {
+      border-left: 4px solid green;
+    }
+
+    &.In-progress {
+      border-left: 4px solid orange;
+    }
+
+    &.Closed {
+      border-left: 4px solid red;
+    }
+
+    .ui-icon {
+      margin-right: 340px;
+    }
+
+    .name {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      min-width: 200px;
+      font-size: 12pt;
+      font-weight: bold;
+      padding-left: 10px;
+      cursor: pointer;
+    }
+
+    .icon {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      cursor: pointer;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .status {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      border-bottom: 1px solid #ccc;
+      min-width: 100px;
+    }
+  }
+
+  .feedbackcontainer {
+    .header {
+      font-weight: 700;
+    }
+
+    .text {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .addfeedbackcontainer {
+    button {
+      margin: 10px 10px 10px 10px;
+    }
+  }
+
+
+
+*/

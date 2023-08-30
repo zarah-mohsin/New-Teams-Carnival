@@ -2,7 +2,7 @@ import { LiveShareClient } from "@microsoft/live-share";
 import { LiveShareHost, call } from "@microsoft/teams-js";
 import { SharedMap } from "fluid-framework";
 
-class FluidService {
+class FluidServiceSnakes {
   #VALUE_KEY = "value-key";
 
   #container;
@@ -115,4 +115,4 @@ class FluidService {
   };
 }
 
-export default new FluidService();
+export default new FluidServiceSnakes();

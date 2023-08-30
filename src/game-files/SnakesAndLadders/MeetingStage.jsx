@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useCallback, useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
-import FluidService from "./fluidLiveShare";
+import FluidServiceSnakes from "./snakesFluidLiveShare";
 import { app } from "@microsoft/teams-js";
 import "./snakes.css";
 
@@ -25,7 +25,7 @@ export default function MeetingStage({ user }) {
   //////////////LETS ROLL BUTTON TRIGGER///////////////////////
 
   const handlePlayers = useCallback((number) => {
-    FluidService.emptyTrigger();
+    FluidServiceSnakes.emptyTrigger();
   }, []);
 
   useEffect(() => {
@@ -41,11 +41,11 @@ export default function MeetingStage({ user }) {
     //add the the movementCount
     //setMovementCount(prevCount => prevCount + 1);
 
-    const fluidArray = await FluidService.getValues();
+    const fluidArray = await FluidServiceSnakes.getValues();
     if (fluidArray[1] === myName) {
       //If this condition is true, it means it is our turn to move so we will allow for the dice to be rolled.
       //setDice(number);
-      FluidService.updateValues(number); //works
+      FluidServiceSnakes.updateValues(number); //works
     }
   }, []);
 
@@ -60,9 +60,9 @@ export default function MeetingStage({ user }) {
   useEffect(() => {
     app.initialize().then(async () => {
       try {
-        await FluidService.connect();
+        await FluidServiceSnakes.connect();
 
-        FluidService.onNewData((array) => {
+        FluidServiceSnakes.onNewData((array) => {
           if (array[0] === -1) {
             setTimeout(() => {
               setGameOver(true);

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { DefaultButton, PrimaryButton, Stack } from "@fluentui/react";
 
 export default function GameCard({ games, showGame }) {
-  const { tabDisplay, setTabDisplay } = React.useContext(TabDisplayContext);
   const navigate = useNavigate();
   return (
     <div>
@@ -29,7 +28,7 @@ export default function GameCard({ games, showGame }) {
           <PrimaryButton
             text="Play"
             className="main-menu-button"
-            onClick={() => (setTabDisplay(games.Title), navigate("/game"))}
+            onClick={() => navigate("/game")}
           />
         </Stack>
       </div>

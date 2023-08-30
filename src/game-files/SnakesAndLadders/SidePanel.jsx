@@ -1,6 +1,6 @@
 import { meeting, app } from "@microsoft/teams-js";
 import { useState, useEffect } from "react";
-import FluidService from "./snakesFluidLiveShare.js";
+import FluidServiceSnakes from "./snakesFluidLiveShare.js";
 import "./snakes.css";
 import titleCard from "./logo.png";
 
@@ -19,11 +19,11 @@ export const SidePanel = ({ user }) => {
   const buttonClicked = () => {
     if (!activeUsers.includes(myName)) {
       setActiveUsers((prevActiveUsers) => [...prevActiveUsers, myName]);
-      FluidService.updateNames(myName);
+      FluidServiceSnakes.updateNames(myName);
       setPlayText("Actually, I changed my mind");
     } else {
       setActiveUsers(activeUsers.filter((elem) => elem !== myName));
-      FluidService.removeName(myName);
+      FluidServiceSnakes.removeName(myName);
       setPlayText("I want to play");
     }
   };
@@ -42,10 +42,10 @@ export const SidePanel = ({ user }) => {
   useEffect(() => {
     app.initialize().then(async () => {
       try {
-        await FluidService.connect();
-        FluidService.resetMap();
+        await FluidServiceSnakes.connect();
+        FluidServiceSnakes.resetMap();
 
-        FluidService.onNewData((array) => {
+        FluidServiceSnakes.onNewData((array) => {
           setActiveUsers(array);
 
           if (typeof array[0] === "number") {
@@ -88,12 +88,12 @@ export const SidePanel = ({ user }) => {
   const startGame = async () => {
     if (activeUsers.length > 0 && activeUsers.length < 5) {
       //If the number of declared players matches the WebGL build's requirements, let's start the game.
-      FluidService.updateValues(activeUsers.length);
+      FluidServiceSnakes.updateValues(activeUsers.length);
       shareToStage();
     } else {
       setCorrectPlayers(false);
       setActiveUsers([]);
-      FluidService.resetMap();
+      FluidServiceSnakes.resetMap();
     }
   };
 

@@ -1,0 +1,371 @@
+:root {
+  --main: #363628;
+  --heading: #808080;
+  --first: #5b5fc7;
+  --second: #e22c80;
+  --third: #64afac;
+  --background: #f7f5f6;
+  --delay: 0;
+  --duration: 800ms;
+  --iterations: 1;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+/* body {
+  background: var(--background);
+  color: var(--main);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  padding: 0;
+  margin: 0;
+} */
+
+.display-list,
+.flex-wrapper,
+.list-item,
+.form-container,
+.speaker-list {
+  display: flex;
+}
+
+.flex-wrapper,
+.form-container,
+.list-item,
+.display-list,
+.speaker-list {
+  align-items: center;
+  width: 90vw;
+}
+
+h1 {
+  color: var(--heading);
+  text-align: center;
+}
+
+.speaker-box {
+  border-width: 1px;
+  border-style: solid;
+  width: 80%;
+  padding-bottom: 5pt;
+  margin: 20pt;
+}
+
+.speaker-list {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.speaker-list h2,
+.speaker-list h4 {
+  font-size: 8pt;
+  text-align: center;
+  letter-spacing: 1px;
+  align-self: center;
+  margin: 5pt;
+}
+
+input {
+  height: 20pt;
+  background: none;
+  color: var(--main);
+  font-size: 12pt;
+  border: 1px solid var(--main);
+  border-radius: 2px;
+}
+
+input:focus {
+  background: white;
+}
+
+/* button {
+  border: none;
+  font-size: 12pt;
+  padding: 5pt;
+  border-radius: 5pt;
+  margin: 5pt 0;
+  width: 150pt;
+} */
+
+.addbutton {
+  background-color: rgb(0, 120, 212);
+  padding: 5px;
+  color: white;
+}
+
+.add-name {
+  width: 210px;
+}
+
+.add-name > input {
+  margin-right: 3pt;
+  padding: 3pt;
+  width: 165px;
+}
+
+.add-name > button {
+  width: 20pt;
+  margin: 0;
+  padding: 0;
+}
+
+.add-name > hr {
+  margin: 20pt 10pt 10pt 10pt;
+}
+
+.shuffle {
+  background-color: var(--second);
+}
+
+/* Close button */
+.close {
+  width: 16pt;
+  height: 16pt;
+  font-size: 16px;
+  line-height: 8pt;
+  cursor: pointer;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-item {
+  margin: 10pt 0;
+  color: var(--main);
+  justify-content: space-between;
+  padding: 2pt 8pt;
+  width: 90%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 15px 18px;
+  position: relative;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: grab;
+}
+
+.list-anim-enter {
+  opacity: 0;
+  transition: 500ms all ease;
+}
+
+.list-anim-enter-active {
+  opacity: 1;
+  transition: 500ms all ease;
+  transform: rotateX(360deg);
+}
+
+.list-anim-leave {
+  opacity: 1;
+  transition: 500ms all;
+}
+
+.list-anim-leave-active {
+  opacity: 0;
+  transition: 500ms all;
+  transform: translateX(20px);
+}
+
+.display-list {
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+
+.display-list h5 {
+  margin-bottom: 6px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.people-list {
+  text-align: center;
+}
+
+.reveal-text,
+.reveal-text::after {
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: var(--duration, 800ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.reveal-text {
+  --animation-delay: var(--delay, 0);
+  --animation-duration: var(--duration, 800ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  font-size: 16pt;
+  animation-name: clip-text;
+  color: var(--main);
+  cursor: default;
+}
+
+.reveal-text::after {
+  content: "";
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+  animation-name: text-revealer;
+}
+
+@keyframes clip-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes text-revealer {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* Font */
+.pixel-font {
+  font-family: Pixel;
+}
+
+/* Title */
+.title {
+  font-family: "Pixel";
+  font-size: 16px;
+  text-align: center;
+  color: #454db8;
+}
+
+/* Share & Play btn */
+.sp-btn {
+  font-family: "Pixel", sans-serif;
+  font-size: 10px;
+  background-color: #454db8;
+  color: white;
+  border-radius: 2px;
+  height: 50px;
+  width: 250px;
+  transition: background-color 0.3s ease;
+}
+
+.sp-btn:active {
+  background-color: white;
+  color: darkblue;
+}
+
+/* .start-btn {
+  font-family: "Pixel", sans-serif;
+  font-size: 10px;
+  background-color: grey;
+  color: white;
+  height: 50px;
+  width: 180px;
+  cursor: not-allowed;
+  transition: background-color 0.3s ease;
+}
+.start-btn.active {
+  background-color: #5059c9;
+  cursor: pointer;
+}
+.start-btn.active:active {
+  background-color: darkblue;
+} */
+
+/* Score Title */
+.score-title {
+  font-family: "Pixel";
+  font-size: 10px;
+  text-align: center;
+}
+
+/* Score */
+.score {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 220px;
+  font-family: Pixel;
+  font-size: 10px;
+  text-align: center;
+  padding-left: 0.5px;
+}
+
+/* Submit btn */
+.submit-btn {
+  font-family: "Pixel";
+  font-size: 10px;
+  background-color: grey;
+  color: white;
+  border: 1px solid #808080;
+  border-radius: 2px;
+}
+
+/* List heading */
+.list-heading {
+  font-family: "Pixel";
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+
+/* Score Rank */
+.score-rank {
+  display: flex;
+  width: 200px;
+  height: 10px;
+  font-family: "Pixel", sans-serif;
+  font-size: 10px;
+  text-align: left;
+  margin: 5pt 0;
+}
+
+/* Message */
+.message {
+  font-size: 12pt;
+  font-style: italic;
+}

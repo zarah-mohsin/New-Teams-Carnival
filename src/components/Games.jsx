@@ -6,11 +6,12 @@ import SnakesGame from "../game-files/SnakesAndLadders/SnakesGame";
 import Game from "../game-files/TriviaRace/Game";
 import Pacman from "../game-files/Pacman/Pacman";
 import TurnBasedCombat from "../game-files/MightAndMalice/TurnBasedCombat";
+import RexGame from "../game-files/Teams-Rex/components/RexGame";
 import { PrimaryButton } from "@fluentui/react";
 
 export default function Games() {
   const { tabDisplay } = React.useContext(TabDisplayContext);
-  const [frame, setFrame] = React.useState(false);
+  const [frame, setFrame] = React.useState("");
   const navigate = useNavigate();
   useEffect(() => {
     async function getContext() {
@@ -29,6 +30,7 @@ export default function Games() {
       {tabDisplay === "Trivia Race" && <Game />}
       {tabDisplay === "Pacman" && <Pacman />}
       {tabDisplay === "Might and Malice" && <TurnBasedCombat />}
+      {tabDisplay === "Teams-Rex" && <RexGame />}
       {frame === FrameContexts.sidePanel && (
         <PrimaryButton
           className="main-menu-button"
